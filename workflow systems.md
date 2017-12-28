@@ -167,12 +167,53 @@ The Snakemake workflow management system is a tool to create reproducible and sc
 
    ​
 
-   - Syntax: Explicit
+   * Syntax: Explicit
+
    - Paradigm: Class
+
    - Interaction: [CLI](http://docs.bpipe.org/Commands/Commands/) 
-   - Distributed Computing Support:  Partially? 
-   - Extensive: [API](https://snakemake.readthedocs.io/en/latest/api_reference/snakemake.html) 
-   - Language: Python
-   - License:  MIT License
-   - Pros: Packages are managed by conda. Google cloud engine is supported and cluster execution is easily integrated. DAG is introduced to visualize workflow. Configuration is based on YAML or JSON. Sustainable and reproducible archiving. Scheduling algorithm provides general support for distributed computing.
-   - Cons: Extended Backus-Naur form ([EBNF](https://snakemake.readthedocs.io/en/latest/snakefiles/writing_snakefiles.html)) is needed to learn to write pipelines. No other languages are supported. No community of sharing pipelines written and ran on snakemake.  Cloud file or storage management?
+
+   - Distributed Computing Support:  Partially?  Based on the [document](http://docs.bpipe.org/Guides/ParallelTasks/), it seems that the parallel tasks are executed in small-scale. 
+
+   - Extensive: NA
+
+   - Language: Groovy
+
+   - License:  BSD 3-clause "New" or "Revised" License
+
+   - Pros: Tiny, low-level and efficient. No needs to learn any other languages while it supports executing several embedded languages. Auditing every commands pipelines executed and recovering from interruption and error. Pipelines are written through combination of inner commands.
+
+   - Cons: Compared to other workflows, it doesn't provide any gui interactions, visualization of workflows or results, sharable feature and container based dispatch feature. Also the small-scale parallel tasks are not fully distributed ones? 
+
+     ------
+
+### [Ruffus](http://www.ruffus.org.uk/installation.html)
+[github](https://github.com/bunbun/ruffus)
+
+The ruffus module has the following design goals:
+
+1. Simplicity. Can be picked up in 10 minutes
+2. Elegance
+3. Light weight
+4. Unintrusive
+5. Flexible/Powerful
+
+Automatic support for
+
+1. Managing dependencies
+2. Parallel jobs
+3. Re-starting from arbitrary points, especially after errors
+4. Display of the pipeline as a flowchart
+5. Reporting
+
+- Syntax: Explicit
+
+
+- Paradigm: Class
+- Interaction: [CLI](http://docs.bpipe.org/Commands/Commands/)
+- Distributed Computing Support:  Partially?  Based on the [document](http://docs.bpipe.org/Guides/ParallelTasks/), it seems that the parallel tasks are executed in small-scale. 
+- Extensive: NA
+- Language: Groovy
+- License:  BSD 3-clause "New" or "Revised" License
+- Pros: Tiny, low-level and efficient. No needs to learn any other languages while it supports executing several embedded languages. Auditing every commands pipelines executed and recovering from interruption and error. Pipelines are written through combination of inner commands.
+- Cons: Compared to other workflows, it doesn't provide any gui interactions, visualization of workflows or results, sharable feature and container based dispatch feature. Also the small-scale parallel tasks are not fully distributed ones? 
