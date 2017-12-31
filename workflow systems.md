@@ -256,4 +256,20 @@ Feature:
 
   ------
 
-  ​
+### [BioQueue](https://github.com/liyao001/BioQueue)
+
+BioQueue is a lightweight and easy-to-use queue system to accelerate the proceeding of bioinformatic workflows. Based on machine learning methods, BioQueue can maximize the efficiency, and at the same time, it also reduces the possibility of errors caused by unsupervised concurrency (like memory overflow). BioQueue can both run on POSIX 
+compatible systems (Linux, Solaris, OS X, etc.) and Windows.
+
+- Syntax: Implicit
+
+
+- Paradigm: Class
+- Interaction: CLI and GUI(Web-based)
+- Distributed Computing Support:  Yes, [document](http://bioqueue.readthedocs.io/en/latest/cluster.html#how-to-use-bioqueue-on-clusters)
+- Extensive: API
+- Language: Python
+- License:  Apache License 2.0
+- Pros: Machine learning method is introduced to estimate the resource usage(CPU,memory and disk) needed by each step. It possesses a shell command-like syntax instead of implementing a new script language. Reading and writing to sqlite rather than disk files.
+- Cons: Lack of some features such as pipelines sharing and container technology. Also the performance and accuracy of  resource usage estimation is not tested.
+
