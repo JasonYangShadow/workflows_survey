@@ -210,10 +210,50 @@ Automatic support for
 
 
 - Paradigm: Class
-- Interaction: [CLI](http://docs.bpipe.org/Commands/Commands/)
-- Distributed Computing Support:  Partially?  Based on the [document](http://docs.bpipe.org/Guides/ParallelTasks/), it seems that the parallel tasks are executed in small-scale. 
+- Interaction: [CLI](http://www.ruffus.org.uk/tutorials/new_tutorial/manual_contents.html)
+- Distributed Computing Support:  Yes, It uses python multiprocessing to run each job in a separate process. From version 2.4 onwards, it includes Open Grid Forum API specification.
 - Extensive: NA
+- Language: Python
+- License:  MIT License
+- Pros: Lightweight, elegance and distributed computing supporting. Easy for the guys familiar with python development.
+- Cons: No visualization of result or workflows. Requiring python development knowledge. Pip and easy_installl dependencies. [Official Todo](http://www.ruffus.org.uk/todo.html)
+
+------
+
+### [Nextflow](https://www.nextflow.io/)
+
+[github](https://github.com/nextflow-io/nextflow)
+
+Nextflow framework is based on the *dataflow* programming model, which greatly simplifies writing parallel and distributed pipelines without adding unnecessary complexity and letting you concentrate on the flow of data, i.e. the functional logic of the application/algorithm. Nextflow script is defined by composing  many different processes. Each process can be written in any scripting language that can be executed by the Linux platform (BASH, Perl, Ruby, Python, etc), to which is added the ability to coordinate and synchronize the processes execution by simply specifying their inputs and outputs.
+
+Feature:
+
+1. Fast prototyping, Nextflow allows you to write a computational pipeline by making it simpler to put together many different tasks.
+2. Reproducibility, docker and singularity supported.
+3. Portable, it provides abstraction layers between pipeline's logic and the execution layer.
+4. Unified parallelism, it is based on dataflow programing model simplifying writing complex pipelines.
+5. Continuous checkpoints, all the intermediate results are tracked.
+6. Stream oriented, it extends the Unix pipes model with a fluent DSL.
+
+- Syntax: Implicit
+
+
+- Paradigm: Class
+
+- Interaction: CLI
+
+- Distributed Computing Support:  Yes, it provides out of box support for SGE, LSF, SLURM, PBS and HTCondor batch schedulers and for kubernetes and AWS 
+
+- Extensive: NA
+
 - Language: Groovy
-- License:  BSD 3-clause "New" or "Revised" License
-- Pros: Tiny, low-level and efficient. No needs to learn any other languages while it supports executing several embedded languages. Auditing every commands pipelines executed and recovering from interruption and error. Pipelines are written through combination of inner commands.
-- Cons: Compared to other workflows, it doesn't provide any gui interactions, visualization of workflows or results, sharable feature and container based dispatch feature. Also the small-scale parallel tasks are not fully distributed ones? 
+
+- License:  GNU GPLv3 License
+
+- Pros: Powerful, it includes lots of features such as cluster support, execution report, resources and task report, pipelines sharing and container technology support. Groovy based language development for pipelines, quite easy to write and read. [CWL support](https://github.com/nextflow-io/cwl2nxf). Multiple scripts running on unix platform supports including python, ruby, bash and etc. 
+
+- Cons: No rootless container support, many dependencies including apache ignite and jdk.
+
+  ------
+
+  ​
