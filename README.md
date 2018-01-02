@@ -88,15 +88,13 @@ Galaxy is an open, web-based platform for accessible, reproducible, and transpar
 
   The Agave Platform is an open source, science-as-a-service API platform for powering your digital lab. Agave allows you to bring together your public, private, and shared high performancecomputing (HPC), high throughput computing (HTC), Cloud, and Big Data resources under a single, web-friendly REST API.
 
-  1. Run code
+    1. Run code
 
-  2. Manage data
+    2. Manage data
 
-  3. Collaborate meaningfully
+    3. Collaborate meaningfully
 
-  4. Integrate anywhere
-
-     ​
+    4. Integrate anywhere
 
   - Syntax: Explicit
 
@@ -346,24 +344,18 @@ A scalable, efficient, cross-platform pipeline management system written entirel
 
 Validated, scalable, community developed variant calling, RNA-seq and small RNA analysis. You write a high level configuration file specifying your inputs and analysis parameters. This input drives a parallel run that handles distributed execution, idempotent processing restarts and safe transactional steps. bcbio provides a shared community resource that handles the data processing component of sequencing analysis, providing researchers with more time to focus on the downstream biology.
 
-1. Community developed: We welcome contributors with the goal of overcoming the biological, algorithmic and computational challenges that face individual developers working on complex pipelines in quickly changing research areas. See our [users page](https://bcbio-nextgen.readthedocs.org/en/latest/contents/introduction.html#users) for examples of bcbio-nextgen deployments, and the [developer documentation](https://bcbio-nextgen.readthedocs.org/en/latest/contents/code.html) for tips on contributing.
-
-2. Installation: [A single installer script](https://bcbio-nextgen.readthedocs.org/en/latest/contents/installation.html#automated) prepares all third party software, data libraries and system configuration files.
-
-3. [Automated validation](http://bcb.io/2014/05/12/wgs-trio-variant-evaluation/): Compare variant calls against common reference materials or sample specific SNP arrays to ensure call correctness.Incorporation of multiple approaches for alignment, preparation and variant calling enable unbiased comparisons of algorithms.
-
-4. Distributed: Focus on [parallel analysis and scaling](http://bcb.io/2013/05/22/scaling-variant-detection-pipelines-for-whole-genome-sequencing-analysis/) to handle large population studies and whole genome analysis. Runs on single multi-core computers, in compute clusters using [IPython parallel](http://ipython.org/ipython-doc/dev/index.html),or on the Amazon cloud. See the [parallel documentation](https://bcbio-nextgen.readthedocs.org/en/latest/contents/parallel.html) for full details.
-
-5. Multiple analysis algorithms: bcbio-nextgen provides configurable[variant calling, RNA-seq and small RNA pipelines](https://bcbio-nextgen.readthedocs.org/en/latest/contents/pipelines.html).
-
+1. Quantifiable: Doing good science requires being able to accurately assess the quality of results and re-verify approaches as new algorithms and software become available.
+2. Analyzable: Results feed into tools to make it easy to query andvisualize the results.
+3. Scalable: Handle large datasets and sample populations on distributedheterogeneous compute environments.
+4. Reproducible: Track configuration, versions, provenance and command lines to enable debugging, extension and reproducibility of results.
+5. Community developed: The development process is fully open and sustained by contributors from multiple institutions. By working together on a shared framework, we can overcome the challenges associated with maintaining complex pipelines in a rapidly changing area of research.
+6. Accessible: Bioinformaticians, biologists and the general public should be able to run these tools on inputs ranging from research materials to clinical samples to personal genomes.
    - Syntax: Implicit
-
-
-   - Paradigm: Class
+   - Paradigm: Configuration
    - Interaction: CLI
-   - Distributed Computing Support:  Yes, it supports AWS, Azure, Openstack, GCE and HPC.
-   - Extensive: [API](http://toil.readthedocs.io/en/latest/developingWorkflows/toilAPI.html)
+   - Distributed Computing Support:  Yes, it supports [multiple cores and parallel messaging](https://bcbio-nextgen.readthedocs.io/en/latest/contents/parallel.html) and [AWS](https://bcbio-nextgen.readthedocs.io/en/latest/contents/cloud.html)
+   - Extensive: NA
    - Language: Python
-   - License:  Apache License, Version 2.0
-   - Pros: Full features support, including reproducibility, cloud and container technology support. CWL is supported. 
-   - Cons:  No multiple languages supported. No visualization of workflows or report. Pythonic development requires package dependencies management and pip or easy_install tools dependencies.
+   - License:  MIT License
+   - Pros: It is designed for special [users and purpose](https://bcbio-nextgen.readthedocs.io/en/latest/contents/pipelines.html) , also it provides basic features of workflow system. CWL is supported.  
+   - Cons:  Resource configuration for parallel tasks should be set manually. ZeroMQ and IPython parallel framework are employed to implement the parallel feature. No packages management components.
