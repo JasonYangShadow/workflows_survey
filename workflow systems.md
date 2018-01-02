@@ -273,3 +273,72 @@ compatible systems (Linux, Solaris, OS X, etc.) and Windows.
 - Pros: Machine learning method is introduced to estimate the resource usage(CPU,memory and disk) needed by each step. It possesses a shell command-like syntax instead of implementing a new script language. Reading and writing to sqlite rather than disk files.
 - Cons: Lack of some features such as pipelines sharing and container technology. Also the performance and accuracy of  resource usage estimation is not tested.
 
+
+------
+
+### [Cluster Flow](http://clusterflow.io/)
+
+[github](https://github.com/ewels/clusterflow)
+
+Cluster Flow is designed to be quick and easy to install, with flexible configuration and simple customization.
+
+1. Simple. Installation walkthroughs and a large module toolset mean you get up and running quickly.
+2. Powerful. Comes packaged with support for 24 different bioinformatics tools (RNA, ChIP, Bisulfite and more).
+3. Flexibile. Pipelines are fast to assemble, making it trivial to change on the fly.
+4. Traceable. Commands, software versions, everything is logged for reproducability.
+
+- Syntax: Implicit
+
+
+- Paradigm: Class
+
+- Interaction: CLI
+
+- Distributed Computing Support:  Yes, It supports the sun GRidEngine, LSF and SLURM job managers.
+
+- Extensive: NA
+
+- Language: Perl
+
+- License:  GNU General Public License v3.0
+
+- Pros: Simple, it is a complex perl script requiring basic core perl packages, which makes it runnable on most machines. 
+
+- Cons: Currently, it supports a list of [tools](https://github.com/ewels/clusterflow) . For cluster, one needs to configure it manually such as resource estimation and environment configuration. 
+
+  -------
+
+### [Toil](http://toil.ucsc-cgl.org/)
+[github](https://github.com/BD2KGenomics/toil)
+
+A scalable, efficient, cross-platform pipeline management system written entirely in Python and designed around the principles of functional programming.
+
+1. Pythonic. Easily mastered, the Python user API for defining and running workflows is built on one core class. Also, everything is open source under the Apache License.
+2. Robust. Toil workflows support arbitrary worker and leader failure, with strong check-pointing that always allows resumption.
+3. Efficient. Caching, fine grained, per task, resource requirement specifications, and support for the AWS spot market mean workflows can be executed with little waste.
+4. Built for the cloud. Develop and test on your laptop, then deploy on Microsoft Azure, Amazon Web Services (including the spot market), Google Compute Engine, OpenStack, or on an individual machine.
+5. Strongly scalable. Build a workflow on your laptop, then scale to the cloud and run it concurrently on hundreds of nodes and thousands of cores with ease. We've tested it with [32,000 preemptable cores](http://biorxiv.org/content/early/2016/07/07/062497) so far, but Toil can handle more.
+6. Service integration. Toil plays nice with databases and services, such as Apache Spark. Service clusters can be created quickly and easily integrated with a Toil workflow, with precisely defined start and end times that fits with the flow of other jobs in the workflow.
+
+- Syntax: Implicit
+
+
+- Paradigm: Class
+
+- Interaction: CLI
+
+- Distributed Computing Support:  Yes, it supports AWS, Azure, Openstack, GCE and HPC.
+
+- Extensive: [API](http://toil.readthedocs.io/en/latest/developingWorkflows/toilAPI.html)
+
+- Language: Python
+
+- License:  Apache License, Version 2.0
+
+- Pros: Full features support, including reproducibility, cloud and container technology support. CWL is supported. 
+
+- Cons:  No multiple languages supported. No visualization of workflows or report. Pythonic development requires package dependencies management and pip or easy_install tools dependencies.
+
+  --------
+
+  ​
