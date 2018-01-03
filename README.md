@@ -351,11 +351,43 @@ Validated, scalable, community developed variant calling, RNA-seq and small RNA 
 5. Community developed: The development process is fully open and sustained by contributors from multiple institutions. By working together on a shared framework, we can overcome the challenges associated with maintaining complex pipelines in a rapidly changing area of research.
 6. Accessible: Bioinformaticians, biologists and the general public should be able to run these tools on inputs ranging from research materials to clinical samples to personal genomes.
    - Syntax: Implicit
+
    - Paradigm: Configuration
+
    - Interaction: CLI
+
    - Distributed Computing Support:  Yes, it supports [multiple cores and parallel messaging](https://bcbio-nextgen.readthedocs.io/en/latest/contents/parallel.html) and [AWS](https://bcbio-nextgen.readthedocs.io/en/latest/contents/cloud.html)
+
    - Extensive: NA
+
    - Language: Python
+
    - License:  MIT License
+
    - Pros: It is designed for special [users and purpose](https://bcbio-nextgen.readthedocs.io/en/latest/contents/pipelines.html) , also it provides basic features of workflow system. CWL is supported.  
+
    - Cons:  Resource configuration for parallel tasks should be set manually. ZeroMQ and IPython parallel framework are employed to implement the parallel feature. No packages management components.
+
+     ------
+### [GenePattern](http://software.broadinstitute.org/cancer/software/genepattern/)
+
+[github](https://github.com/genepattern)
+
+A platform for reproducible bioinformatics
+
+1. Powerful genomics tools in a user-friendly interface, GenePattern provides hundreds of analytical tools for the analysis of gene expression ([RNA-seq](http://software.broadinstitute.org/cancer/software/genepattern/rna-seq-analysis) and [microarray](http://software.broadinstitute.org/cancer/software/genepattern/gene-expression-analysis)), [sequence variation and copy number](http://software.broadinstitute.org/cancer/software/genepattern/variant-and-copy-number-analysis), [proteomic](http://software.broadinstitute.org/cancer/software/genepattern/proteomics), [flow cytometry](http://software.broadinstitute.org/cancer/software/genepattern/flow-cytometry), and network analysis. These tools are all available through a Web interface with no programming experience required.
+2. GenePattern Notebooks, The [GenePattern Notebook environment](http://www.broadinstitute.org/cancer/software/genepattern/genepattern-notebooks) extends the [Jupyter Notebook](http://jupyter.org/) system, allowing researchers to create documents that interleave formatted text, graphics and other multimedia, executable code, and GenePattern analyses, creating a single "research narrative" that puts scientific discussion and analyses in the same place.
+3. Analysis Pipelines, GenePattern pipelines allow you to capture, automate, and share the complex series of steps required to analyze genomic data. By providing a way to create and distribute an entire computational analysis 
+   methodology in a single executable script, pipelines enable a form of in silico reproducible research.
+4. Reproducible Research, Published research, particularly in silico research, should contain sufficient information to completely reproduce the research results. By capturing the analysis methods, parameters, and data used to produce the research results, GenePattern pipelines enable reproducible research. By versioning every pipeline and its methods, GenePattern ensures that  each version of a pipeline (and its results) remain static, even as your research and the pipeline continue to evolve.
+5. Programming Environment, GenePattern provides a simple application interface that gives users access to computational analysis methods and tools, regardless of their computational experience. GenePattern also provides a programmatic interface that makes those analysis modules available to computational biologists and developers from Java, MATLAB, and R.
+
+- Syntax: Implicit
+- Paradigm: Configuration
+- Interaction: CLI
+- Distributed Computing Support:  Yes, it supports [multiple cores and parallel messaging](https://bcbio-nextgen.readthedocs.io/en/latest/contents/parallel.html) and [AWS](https://bcbio-nextgen.readthedocs.io/en/latest/contents/cloud.html)
+- Extensive: NA
+- Language: Python
+- License:  MIT License
+- Pros: It is designed for special [users and purpose](https://bcbio-nextgen.readthedocs.io/en/latest/contents/pipelines.html) , also it provides basic features of workflow system. CWL is supported.  
+- Cons:  Resource configuration for parallel tasks should be set manually. ZeroMQ and IPython parallel framework are employed to implement the parallel feature. No packages management components.
