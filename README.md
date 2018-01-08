@@ -15,12 +15,10 @@ Recently, as docker container technology becomes more and more popular, so lots 
 Make utility is successfully used to manage file transformations common to scientific computing pipelines. It introduces the concept of 'implicit wild card rules', which searches file and dependencies based on file suffixes. However, make itself is not defined for scientific pipelines, as a result, it has several limitations,  such as no built-in support for distributed computing, lacking of powerful data structures as well as impossible sophisticated logic implementation, making it impractical for modern bioinformatics analysis.
 
 ------
-```
-Syntax: Implicit ->  Tasks(jobs) should clearly specify the input/output file names or file names wildcards.
-Syntax: Explicit -> Tasks(jobs) depend on other tasks, not file targets.
-Paradigm: Class -> Pipelines are developed based on classes inherited
-Paradigm: Configuration -> Pipelines are developed based on different format of configurations, which claim the relationship among the tasks(jobs), target pipeline and other pipelines. 
-```
+> Syntax: Implicit ->  Tasks(jobs) should clearly specify the input/output file names or file names wildcards.
+> Syntax: Explicit -> Tasks(jobs) depend on other tasks, not file targets.
+> Paradigm: Class -> Pipelines are developed and described based on classes inherited.
+> Paradigm: Configuration -> Pipelines are developed and described based on configurations.
 ------
 
 ### [Arvados](https://arvados.org/)
@@ -104,7 +102,7 @@ Galaxy is an open, web-based platform for accessible, reproducible, and transpar
 * Interaction: [CLI](http://developer.agaveapi.co/?plaintext#jupyter-hub) and [Agave ToGo](http://togo.agaveapi.co/)
 * Distributed Computing Support: Yes, [Execution Sys Config](http://developer.agaveapi.co/?plaintext#execution-systems) 
   - HPC, Condor -> batch scheduler
-    - CLI -> processes
+  - CLI -> processes
 * Extensive: [Web API](http://developer.agaveapi.co/?plaintext#web-api)
 * Language: Php, Java
 * License: Unkown
@@ -117,23 +115,23 @@ Galaxy is an open, web-based platform for accessible, reproducible, and transpar
 
 The Snakemake workflow management system is a tool to create reproducible and scalable data analyses. Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster, grid and cloud  environments, without the need to modify the workflow definition. Finally, Snakemake workflows can entail a description of required software, which will be automatically deployed to any execution environment.
 
-  - Syntax: Implicit
+  * Syntax: Implicit
 
-  - Paradigm: Configuration
+  * Paradigm: Configuration
 
-  - Interaction: [CLI](https://snakemake.readthedocs.io/en/latest/executable.html#useful-command-line-arguments) 
+  * Interaction: [CLI](https://snakemake.readthedocs.io/en/latest/executable.html#useful-command-line-arguments) 
 
-  - Distributed Computing Support: Yes, Kubernetes, Singularity, Docker
+  * Distributed Computing Support: Yes, Kubernetes, Singularity, Docker
 
-  - Extensive: [API](https://snakemake.readthedocs.io/en/latest/api_reference/snakemake.html) 
+  * Extensive: [API](https://snakemake.readthedocs.io/en/latest/api_reference/snakemake.html) 
 
-  - Language: Python
+  * Language: Python
 
-  - License:  MIT License
+  * License:  MIT License
 
-  - Pros: Packages are managed by conda. Google cloud engine is supported and cluster execution is easily integrated. DAG is introduced to visualize workflow. Configuration is based on YAML or JSON. Sustainable and reproducible archiving. Scheduling algorithm provides general support for distributed computing.
+  * Pros: Packages are managed by conda. Google cloud engine is supported and cluster execution is easily integrated. DAG is introduced to visualize workflow. Configuration is based on YAML or JSON. Sustainable and reproducible archiving. Scheduling algorithm provides general support for distributed computing.
 
-  - Cons: Extended Backus-Naur form ([EBNF](https://snakemake.readthedocs.io/en/latest/snakefiles/writing_snakefiles.html)) is needed to learn to write pipelines. No other languages are supported. No community of sharing pipelines written and ran on snakemake.  Cloud file or storage management?
+  * Cons: Extended Backus-Naur form ([EBNF](https://snakemake.readthedocs.io/en/latest/snakefiles/writing_snakefiles.html)) is needed to learn to write pipelines. No other languages are supported. No community of sharing pipelines written and ran on snakemake.  Cloud file or storage management?
 
     ------
 
@@ -188,17 +186,17 @@ Automatic support for
 4. Display of the pipeline as a flowchart
 5. Reporting
 
-- Syntax: Explicit
+* Syntax: Explicit
 
 
-- Paradigm: Class
-- Interaction: [CLI](http://www.ruffus.org.uk/tutorials/new_tutorial/manual_contents.html)
-- Distributed Computing Support:  Yes, It uses python multiprocessing to run each job in a separate process. From version 2.4 onwards, it includes Open Grid Forum API specification.
-- Extensive: NA
-- Language: Python
-- License:  MIT License
-- Pros: Lightweight, elegance and distributed computing supporting. Easy for the guys familiar with python development.
-- Cons: No visualization of result or workflows. Requiring python development knowledge. Pip and easy_installl dependencies. [Official Todo](http://www.ruffus.org.uk/todo.html)
+* Paradigm: Class
+* Interaction: [CLI](http://www.ruffus.org.uk/tutorials/new_tutorial/manual_contents.html)
+* Distributed Computing Support:  Yes, It uses python multiprocessing to run each job in a separate process. From version 2.4 onwards, it includes Open Grid Forum API specification.
+* Extensive: NA
+* Language: Python
+* License:  MIT License
+* Pros: Lightweight, elegance and distributed computing supporting. Easy for the guys familiar with python development.
+* Cons: No visualization of result or workflows. Requiring python development knowledge. Pip and easy_installl dependencies. [Official Todo](http://www.ruffus.org.uk/todo.html)
 
 ------
 
@@ -217,24 +215,24 @@ Feature:
 5. Continuous checkpoints, all the intermediate results are tracked.
 6. Stream oriented, it extends the Unix pipes model with a fluent DSL.
 
-- Syntax: Implicit
+* Syntax: Implicit
 
 
-- Paradigm: Class
+* Paradigm: Class
 
-- Interaction: CLI
+* Interaction: CLI
 
-- Distributed Computing Support:  Yes, it provides out of box support for SGE, LSF, SLURM, PBS and HTCondor batch schedulers and for kubernetes and AWS 
+* Distributed Computing Support:  Yes, it provides out of box support for SGE, LSF, SLURM, PBS and HTCondor batch schedulers and for kubernetes and AWS 
 
-- Extensive: NA
+* Extensive: NA
 
-- Language: Groovy
+* Language: Groovy
 
-- License:  GNU GPLv3 License
+* License:  GNU GPLv3 License
 
-- Pros: Powerful, it includes lots of features such as cluster support, execution report, resources and task report, pipelines sharing and container technology support. Groovy based language development for pipelines, quite easy to write and read. [CWL support](https://github.com/nextflow-io/cwl2nxf). Multiple scripts running on unix platform supports including python, ruby, bash and etc. 
+* Pros: Powerful, it includes lots of features such as cluster support, execution report, resources and task report, pipelines sharing and container technology support. Groovy based language development for pipelines, quite easy to write and read. [CWL support](https://github.com/nextflow-io/cwl2nxf). Multiple scripts running on unix platform supports including python, ruby, bash and etc. 
 
-- Cons: No rootless container support, many dependencies including apache ignite and jdk.
+* Cons: No rootless container support, many dependencies including apache ignite and jdk.
 
   ------
 
@@ -243,17 +241,17 @@ Feature:
 BioQueue is a lightweight and easy-to-use queue system to accelerate the proceeding of bioinformatic workflows. Based on machine learning methods, BioQueue can maximize the efficiency, and at the same time, it also reduces the possibility of errors caused by unsupervised concurrency (like memory overflow). BioQueue can both run on POSIX 
 compatible systems (Linux, Solaris, OS X, etc.) and Windows.
 
-- Syntax: Implicit
+* Syntax: Implicit
 
 
-- Paradigm: Class
-- Interaction: CLI and GUI(Web-based)
-- Distributed Computing Support:  Yes, [document](http://bioqueue.readthedocs.io/en/latest/cluster.html#how-to-use-bioqueue-on-clusters)
-- Extensive: API
-- Language: Python
-- License:  Apache License 2.0
-- Pros: Machine learning method is introduced to estimate the resource usage(CPU,memory and disk) needed by each step. It possesses a shell command-like syntax instead of implementing a new script language. Reading and writing to sqlite rather than disk files.
-- Cons: Lack of some features such as pipelines sharing and container technology. Also the performance and accuracy of  resource usage estimation is not tested.
+* Paradigm: Class
+* Interaction: CLI and GUI(Web-based)
+* Distributed Computing Support:  Yes, [document](http://bioqueue.readthedocs.io/en/latest/cluster.html#how-to-use-bioqueue-on-clusters)
+* Extensive: API
+* Language: Python
+* License:  Apache License 2.0
+* Pros: Machine learning method is introduced to estimate the resource usage(CPU,memory and disk) needed by each step. It possesses a shell command-like syntax instead of implementing a new script language. Reading and writing to sqlite rather than disk files.
+* Cons: Lack of some features such as pipelines sharing and container technology. Also the performance and accuracy of  resource usage estimation is not tested.
 
 
 ------
@@ -269,24 +267,15 @@ Cluster Flow is designed to be quick and easy to install, with flexible configur
 3. Flexibile. Pipelines are fast to assemble, making it trivial to change on the fly.
 4. Traceable. Commands, software versions, everything is logged for reproducability.
 
-- Syntax: Implicit
-
-
-- Paradigm: Class
-
-- Interaction: CLI
-
-- Distributed Computing Support:  Yes, It supports the sun GRidEngine, LSF and SLURM job managers.
-
-- Extensive: NA
-
-- Language: Perl
-
-- License:  GNU General Public License v3.0
-
-- Pros: Simple, it is a complex perl script requiring basic core perl packages, which makes it runnable on most machines. 
-
-- Cons: Currently, it supports a list of [tools](https://github.com/ewels/clusterflow) . For cluster, one needs to configure it manually such as resource estimation and environment configuration. 
+* Syntax: Implicit
+* Paradigm: Class
+* Interaction: CLI
+* Distributed Computing Support:  Yes, It supports the sun GRidEngine, LSF and SLURM job managers.
+* Extensive: NA
+* Language: Perl
+* License:  GNU General Public License v3.0
+* Pros: Simple, it is a complex perl script requiring basic core perl packages, which makes it runnable on most machines. 
+* Cons: Currently, it supports a list of [tools](https://github.com/ewels/clusterflow) . For cluster, one needs to configure it manually such as resource estimation and environment configuration. 
 
   -------
 
@@ -302,24 +291,15 @@ A scalable, efficient, cross-platform pipeline management system written entirel
 5. Strongly scalable. Build a workflow on your laptop, then scale to the cloud and run it concurrently on hundreds of nodes and thousands of cores with ease. We've tested it with [32,000 preemptable cores](http://biorxiv.org/content/early/2016/07/07/062497) so far, but Toil can handle more.
 6. Service integration. Toil plays nice with databases and services, such as Apache Spark. Service clusters can be created quickly and easily integrated with a Toil workflow, with precisely defined start and end times that fits with the flow of other jobs in the workflow.
 
-- Syntax: Implicit
-
-
-- Paradigm: Class
-
-- Interaction: CLI
-
-- Distributed Computing Support:  Yes, it supports AWS, Azure, Openstack, GCE and HPC.
-
-- Extensive: [API](http://toil.readthedocs.io/en/latest/developingWorkflows/toilAPI.html)
-
-- Language: Python
-
-- License:  Apache License, Version 2.0
-
-- Pros: Full features support, including reproducibility, cloud and container technology support. CWL is supported. 
-
-- Cons:  No multiple languages supported. No visualization of workflows or report. Pythonic development requires package dependencies management and pip or easy_install tools dependencies.
+* Syntax: Implicit
+* Paradigm: Class
+* Interaction: CLI
+* Distributed Computing Support:  Yes, it supports AWS, Azure, Openstack, GCE and HPC.
+* Extensive: [API](http://toil.readthedocs.io/en/latest/developingWorkflows/toilAPI.html)
+* Language: Python
+* License:  Apache License, Version 2.0
+* Pros: Full features support, including reproducibility, cloud and container technology support. CWL is supported. 
+* Cons:  No multiple languages supported. No visualization of workflows or report. Pythonic development requires package dependencies management and pip or easy_install tools dependencies.
 
   --------
 
@@ -334,23 +314,16 @@ Validated, scalable, community developed variant calling, RNA-seq and small RNA 
 4. Reproducible: Track configuration, versions, provenance and command lines to enable debugging, extension and reproducibility of results.
 5. Community developed: The development process is fully open and sustained by contributors from multiple institutions. By working together on a shared framework, we can overcome the challenges associated with maintaining complex pipelines in a rapidly changing area of research.
 6. Accessible: Bioinformaticians, biologists and the general public should be able to run these tools on inputs ranging from research materials to clinical samples to personal genomes.
-   - Syntax: Implicit
 
-   - Paradigm: Configuration
-
-   - Interaction: CLI
-
-   - Distributed Computing Support:  Yes, it supports [multiple cores and parallel messaging](https://bcbio-nextgen.readthedocs.io/en/latest/contents/parallel.html) and [AWS](https://bcbio-nextgen.readthedocs.io/en/latest/contents/cloud.html)
-
-   - Extensive: NA
-
-   - Language: Python
-
-   - License:  MIT License
-
-   - Pros: It is designed for special [users and purpose](https://bcbio-nextgen.readthedocs.io/en/latest/contents/pipelines.html) , also it provides basic features of workflow system. CWL is supported.  
-
-   - Cons:  Resource configuration for parallel tasks should be set manually. ZeroMQ and IPython parallel framework are employed to implement the parallel feature. No packages management components.
+* Syntax: Implicit
+* Paradigm: Configuration
+* Interaction: CLI
+* Distributed Computing Support:  Yes, it supports [multiple cores and parallel messaging](https://bcbio-nextgen.readthedocs.io/en/latest/contents/parallel.html) and [AWS](https://bcbio-nextgen.readthedocs.io/en/latest/contents/cloud.html)
+* Extensive: NA
+* Language: Python
+* License:  MIT License
+* Pros: It is designed for special [users and purpose](https://bcbio-nextgen.readthedocs.io/en/latest/contents/pipelines.html) , also it provides basic features of workflow system. CWL is supported.  
+* Cons:  Resource configuration for parallel tasks should be set manually. ZeroMQ and IPython parallel framework are employed to implement the parallel feature. No packages management components.
 
      ------
 ### [GenePattern](http://software.broadinstitute.org/cancer/software/genepattern/)
@@ -366,15 +339,15 @@ A platform for reproducible bioinformatics
 4. Reproducible Research, Published research, particularly in silico research, should contain sufficient information to completely reproduce the research results. By capturing the analysis methods, parameters, and data used to produce the research results, GenePattern pipelines enable reproducible research. By versioning every pipeline and its methods, GenePattern ensures that  each version of a pipeline (and its results) remain static, even as your research and the pipeline continue to evolve.
 5. Programming Environment, GenePattern provides a simple application interface that gives users access to computational analysis methods and tools, regardless of their computational experience. GenePattern also provides a programmatic interface that makes those analysis modules available to computational biologists and developers from Java, MATLAB, and R.
 
-- Syntax: Implicit
-- Paradigm: Configuration
-- Interaction: [GUI](http://software.broadinstitute.org/cancer/software/genepattern/tutorial#_Using_Pipelines)
-- Distributed Computing Support:  Yes, GenePattern Server.
-- Extensive: [API](http://software.broadinstitute.org/cancer/software/genepattern/programmers-guide)
-- Language: Java
-- License:  BSD-style License 
-- Pros: Full GUI interface with powerful drag and drop feature. It supports development in different languages including R, Java, Python and Matlab.  
-- Cons:  It doesn’t support container technology meaning that it is not easy to be shared and it may be a little difficult to deploy on cluster.
+* Syntax: Implicit
+* Paradigm: Configuration
+* Interaction: [GUI](http://software.broadinstitute.org/cancer/software/genepattern/tutorial#_Using_Pipelines)
+* Distributed Computing Support:  Yes, GenePattern Server.
+* Extensive: [API](http://software.broadinstitute.org/cancer/software/genepattern/programmers-guide)
+* Language: Java
+* License:  BSD-style License 
+* Pros: Full GUI interface with powerful drag and drop feature. It supports development in different languages including R, Java, Python and Matlab.  
+* Cons:  It doesn’t support container technology meaning that it is not easy to be shared and it may be a little difficult to deploy on cluster.
 
 -------
 ### [Makeflow](http://ccl.cse.nd.edu/software/makeflow/)
@@ -385,15 +358,15 @@ Makeflow is a workflow system for executing large complex workflows on clusters,
 3. Makeflow is portable. A workflow is written in a technology neutral way, and then can be deployed to a variety of different systems without modification, including local execution on a single multicore machine as well as batch systems like HTCondor, SGE, PBS, Torque, SLURM, or the bundled Work Queue system. Makeflow can also easily run your jobs in a container environment like Docker or Singularity on top of an existing batch system. The same specification works for all systems, so you can easily move your application from one system to another without rewriting everything.
 4. Makeflow is powerful. Makeflow can handle workloads of millions of jobs running on thousands of machines for months at a time. Makeflow is highly fault tolerant: it can crash or be killed, and upon resuming, will reconnect to running jobs and continue where it left off. A variety of analysis tools are available to understand the performance of your jobs, measure the progress of a workflow, and visualize what is going on.
 
-- Syntax: Implicit
-- Paradigm: Class
-- Interaction: CLI
-- Distributed Computing Support:  Yes, it supports Amazon EC2, general cluster systems and batch systems.
-- Extensive: NA
-- Language: C, Python
-- License: GNU General Public License v2.0
-- Pros: Make style pipeline development. It focuses on cloud, grid and cluster deployment. It has reproducibility feature and supports container technology.
-- Cons: No multiple languages support. Container deployment needs root privileges. 
+* Syntax: Implicit
+* Paradigm: Class
+* Interaction: CLI
+* Distributed Computing Support:  Yes, it supports Amazon EC2, general cluster systems and batch systems.
+* Extensive: NA
+* Language: C, Python
+* License: GNU General Public License v2.0
+* Pros: Make style pipeline development. It focuses on cloud, grid and cluster deployment. It has reproducibility feature and supports container technology.
+* Cons: No multiple languages support. Container deployment needs root privileges. 
 
 
 -------
@@ -404,16 +377,14 @@ Apache Airavata, a software framework to executing and managing computational jo
 
 ![Airavata](pics/AiravataArchitecture.png)
 
-- Syntax: Explicit
-- Paradigm: Configuration
-- Interaction: GUI
-- Distributed Computing Support:  Yes
-- Extensive: [API](https://cwiki.apache.org/confluence/display/AIRAVATA/Airavata+API+Overview)
-- Language: Java
-- License: Apache License 2.0
-- Pros: It is a project belongs to apache community, its goal is to develop a middle-ware sitting between users and computing resources. It has both desktop(client) and web interfaces and generates data using apache thrift-based API. It provides resources monitoring features and multiple languages user API. 
-- Cons: It is not a specific workflow designed for bioinformatics and may need to be modified to meet one's own requirements. Application factory needs connection with computational resources, which may need root privileges to install plugins/softwares. 
+* Syntax: Explicit
+* Paradigm: Configuration
+* Interaction: GUI
+* Distributed Computing Support:  Yes
+* Extensive: [API](https://cwiki.apache.org/confluence/display/AIRAVATA/Airavata+API+Overview)
+* Language: Java
+* License: Apache License 2.0
+* Pros: It is a project belongs to apache community, its goal is to develop a middle-ware sitting between users and computing resources. It has both desktop(client) and web interfaces and generates data using apache thrift-based API. It provides resources monitoring features and multiple languages user API. 
+* Cons: It is not a specific workflow designed for bioinformatics and may need to be modified to meet one's own requirements. Application factory needs connection with computational resources, which may need root privileges to install plugins/softwares. 
 
 ------
-
-### 
