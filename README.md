@@ -388,3 +388,27 @@ Apache Airavata, a software framework to executing and managing computational jo
 * Cons: It is not a specific workflow designed for bioinformatics and may need to be modified to meet one's own requirements. Application factory needs connection with computational resources, which may need root privileges to install plugins/softwares. 
 
 ------
+### [Pegasus](https://pegasus.isi.edu/)
+[github](https://github.com/pegasus-isi/pegasus)
+Pegasus WMS is a configurable system for mapping and executing scientific workflows over a wide range of computational infrastructures including laptops, campus clusters, supercomputers, grids, and commercial and academic clouds. Pegasus has been used to run workflows with up to 1 million tasks that process tens of terabytes of data at a time.
+Pegasus has a number of features that contribute to its usability and effectiveness:
+1. Portability / Reuse – User created workflows can easily be run in different environments without alteration. Pegasus currently runs workflows on top of Condor pools, Grid infrastrucutures such as Open Science Grid and XSEDE, Amazon EC2, Google Cloud, and HPC clusters. The same workflow can run on a single system or across a heterogeneous set of resources.
+2. Performance – The Pegasus mapper can reorder, group, and prioritize tasks in order to increase overall workflow performance.
+3. Scalability – Pegasus can easily scale both the size of the workflow, and the resources that the workflow is distributed over. Pegasus runs workflows ranging from just a few computational tasks up to 1 million. The number of resources involved in executing a workflow can scale as needed without any impediments to performance.
+4. Provenance – By default, all jobs in Pegasus are launched using the Kickstart wrapper that captures runtime provenance of the job and helps in debugging. Provenance data is collected in a database, and the data can be queried with tools such as pegasus-statistics, pegasus-plots, or directly using SQL.
+5. Data Management – Pegasus handles replica selection, data transfers and output registration in data catalogs. These tasks are added to a workflow as auxilliary jobs by the Pegasus planner.
+6. Reliability – Jobs and data transfers are automatically retried in case of failures. Debugging tools such as pegasus-analyzer help the user to debug the workflow in case of non-recoverable failures.
+7. Error Recovery – When errors occur, Pegasus tries to recover when possible by retrying tasks, by retrying the entire workflow, by providing workflow-level checkpointing, by re-mapping portions of the workflow, by trying alternative data sources for staging data, and, when all else fails, by providing a rescue workflow containing a description of only the work that remains to be done. It cleans up storage as the workflow is executed so that data-intensive workflows have enough space to execute on storage-constrained resources. Pegasus keeps track of what has been done (provenance) including the locations of data used and produced, and which software was used with which parameters.
+
+* Syntax: Explicit
+* Paradigm: Configuration
+* Interaction: CLI
+* Distributed Computing Support:  Yes, it supports Amazon EC2/S3, Google Cloud, PBS Cluster, Campus cluster and etc. [document](https://pegasus.isi.edu/documentation/execution_environments.php)
+* Extensive: Python [API](https://pegasus.isi.edu/documentation/jupyter-api-reference.php)
+* Language: Java & Python
+* License: Apache License 2.0
+* Pros: It is successfully used in many fields. It automates the searching process for resources and data location and allows users to debug their pipelines via debugging tools and online workflow monitoring dashboard.
+* Cons: Unsupport container technology.  Only support XML rather than other pipeline description formats and one needs to use dax generator for each workflow to generate XML. 
+
+------
+
