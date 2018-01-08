@@ -15,6 +15,13 @@ Recently, as docker container technology becomes more and more popular, so lots 
 Make utility is successfully used to manage file transformations common to scientific computing pipelines. It introduces the concept of 'implicit wild card rules', which searches file and dependencies based on file suffixes. However, make itself is not defined for scientific pipelines, as a result, it has several limitations,  such as no built-in support for distributed computing, lacking of powerful data structures as well as impossible sophisticated logic implementation, making it impractical for modern bioinformatics analysis.
 
 ------
+```
+Syntax: Implicit ->  Tasks(jobs) should clearly specify the input/output file names or file names wildcards.
+Syntax: Explicit -> Tasks(jobs) depend on other tasks, not file targets.
+Paradigm: Class -> Pipelines are developed based on classes inherited
+Paradigm: Configuration -> Pipelines are developed based on different format of configurations, which claim the relationship among the tasks(jobs), target pipeline and other pipelines. 
+```
+------
 
 ### [Arvados](https://arvados.org/)
 
