@@ -384,10 +384,35 @@ A platform for reproducible bioinformatics
 
 - Syntax: Implicit
 - Paradigm: Configuration
+- Interaction: [GUI](http://software.broadinstitute.org/cancer/software/genepattern/tutorial#_Using_Pipelines)
+- Distributed Computing Support:  Yes, GenePattern Server.
+- Extensive: [API](http://software.broadinstitute.org/cancer/software/genepattern/programmers-guide)
+- Language: Java
+- License:  BSD-style License 
+- Pros: Full GUI interface with powerful drag and drop feature. It supports development in different languages including R, Java, Python and Matlab.  
+- Cons:  It doesn’t support container technology meaning that it is not easy to be shared and it may be a little difficult to deploy on cluster.
+
+-------
+### [Makeflow](http://ccl.cse.nd.edu/software/makeflow/)
+[github](https://github.com/cooperative-computing-lab/cctools)
+Makeflow is a workflow system for executing large complex workflows on clusters, clouds, and grids.
+1. Makeflow is easy to use. The Makeflow language is similar to traditional Make, so if you can write a Makefile, then you can write a Makeflow. A workflow can be just a few commands chained together, or it can be a complex application consisting of thousands of tasks. It can have an arbitrary DAG structure and is not limited to specific patterns.
+2. Makeflow is production-ready. Makeflow is used on a daily basis to execute complex scientific applications in fields such as data mining, high energy physics, image processing, and bioinformatics. It has run on campus clusters, the Open Science Grid, NSF XSEDE machines, and NCSA Blue Waters.
+3. Makeflow is portable. A workflow is written in a technology neutral way, and then can be deployed to a variety of different systems without modification, including local execution on a single multicore machine as well as batch systems like HTCondor, SGE, PBS, Torque, SLURM, or the bundled Work Queue system. Makeflow can also easily run your jobs in a container environment like Docker or Singularity on top of an existing batch system. The same specification works for all systems, so you can easily move your application from one system to another without rewriting everything.
+4. Makeflow is powerful. Makeflow can handle workloads of millions of jobs running on thousands of machines for months at a time. Makeflow is highly fault tolerant: it can crash or be killed, and upon resuming, will reconnect to running jobs and continue where it left off. A variety of analysis tools are available to understand the performance of your jobs, measure the progress of a workflow, and visualize what is going on.
+
+- Syntax: Implicit
+- Paradigm: Class
 - Interaction: CLI
-- Distributed Computing Support:  Yes, it supports [multiple cores and parallel messaging](https://bcbio-nextgen.readthedocs.io/en/latest/contents/parallel.html) and [AWS](https://bcbio-nextgen.readthedocs.io/en/latest/contents/cloud.html)
+- Distributed Computing Support:  Yes, it supports Amazon EC2, general cluster systems and batch systems.
 - Extensive: NA
-- Language: Python
-- License:  MIT License
-- Pros: It is designed for special [users and purpose](https://bcbio-nextgen.readthedocs.io/en/latest/contents/pipelines.html) , also it provides basic features of workflow system. CWL is supported.  
-- Cons:  Resource configuration for parallel tasks should be set manually. ZeroMQ and IPython parallel framework are employed to implement the parallel feature. No packages management components.
+- Language: C, Python
+- License: GNU General Public License v2.0
+- Pros: Make style pipeline development. It focuses on cloud, grid and cluster deployment. It has reproducibility feature and supports container technology.
+- Cons: No multiple languages support. Container deployment needs root privileges. 
+
+
+-------
+
+
+
