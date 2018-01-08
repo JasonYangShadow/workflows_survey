@@ -87,35 +87,22 @@ Galaxy is an open, web-based platform for accessible, reproducible, and transpar
   [github](https://github.com/agaveapi)
 
   The Agave Platform is an open source, science-as-a-service API platform for powering your digital lab. Agave allows you to bring together your public, private, and shared high performancecomputing (HPC), high throughput computing (HTC), Cloud, and Big Data resources under a single, web-friendly REST API.
+1. Run code
+2. Manage data
+3. Collaborate meaningfully
+4. Integrate anywhere
 
-    1. Run code
-
-    2. Manage data
-
-    3. Collaborate meaningfully
-
-    4. Integrate anywhere
-
-  - Syntax: Explicit
-
-  - Paradigm: Configuration
-
-  - Interaction: [CLI](http://developer.agaveapi.co/?plaintext#jupyter-hub) and [Agave ToGo](http://togo.agaveapi.co/)
-
-  - Distributed Computing Support: Yes, [Execution Sys Config](http://developer.agaveapi.co/?plaintext#execution-systems) 
-
-    - HPC, Condor -> batch scheduler
+* Syntax: Explicit
+* Paradigm: Configuration
+* Interaction: [CLI](http://developer.agaveapi.co/?plaintext#jupyter-hub) and [Agave ToGo](http://togo.agaveapi.co/)
+* Distributed Computing Support: Yes, [Execution Sys Config](http://developer.agaveapi.co/?plaintext#execution-systems) 
+  - HPC, Condor -> batch scheduler
     - CLI -> processes
-
-  - Extensive: [Web API](http://developer.agaveapi.co/?plaintext#web-api)
-
-  - Language: Php, Java
-
-  - License: Unkown
-
-  - Pros: JSON file is used to configure everything. Core service is deployed and distributed by docker images.[github](https://github.com/agaveapi/core-services) . It has a file service to manage the data storage, and the system itself will transfer data and ensure it completes. It has a angular-js based web administration console. 
-
-  - Cons: It implements basic functions of workflow system but doesn't have reproducible feature. Data will be transfered among nodes and may be improper for huge data. Docker is used and root privileges may be required.
+* Extensive: [Web API](http://developer.agaveapi.co/?plaintext#web-api)
+* Language: Php, Java
+* License: Unkown
+* Pros: JSON file is used to configure everything. Core service is deployed and distributed by docker images.[github](https://github.com/agaveapi/core-services) . It has a file service to manage the data storage, and the system itself will transfer data and ensure it completes. It has a angular-js based web administration console. 
+* Cons: It implements basic functions of workflow system but doesn't have reproducible feature. Data will be transfered among nodes and may be improper for huge data. Docker is used and root privileges may be required.
 
     ------
 
@@ -163,25 +150,15 @@ The Snakemake workflow management system is a tool to create reproducible and sc
 
 8. Notifications by Email or Instant Message - Bpipe can send you alerts to tell you when your pipeline finishes or even as each stage completes.
 
-   ​
-
-   * Syntax: Explicit
-
-   - Paradigm: Class
-
-   - Interaction: [CLI](http://docs.bpipe.org/Commands/Commands/) 
-
-   - Distributed Computing Support:  Partially?  Based on the [document](http://docs.bpipe.org/Guides/ParallelTasks/), it seems that the parallel tasks are executed in small-scale. 
-
-   - Extensive: NA
-
-   - Language: Groovy
-
-   - License:  BSD 3-clause "New" or "Revised" License
-
-   - Pros: Tiny, low-level and efficient. No needs to learn any other languages while it supports executing several embedded languages. Auditing every commands pipelines executed and recovering from interruption and error. Pipelines are written through combination of inner commands.
-
-   - Cons: Compared to other workflows, it doesn't provide any gui interactions, visualization of workflows or results, sharable feature and container based dispatch feature. Also the small-scale parallel tasks are not fully distributed ones? 
+* Syntax: Explicit
+* Paradigm: Class
+* Interaction: [CLI](http://docs.bpipe.org/Commands/Commands/) 
+* Distributed Computing Support:  Partially?  Based on the [document](http://docs.bpipe.org/Guides/ParallelTasks/), it seems that the parallel tasks are executed in small-scale. 
+* Extensive: NA
+* Language: Groovy
+* License:  BSD 3-clause "New" or "Revised" License
+* Pros: Tiny, low-level and efficient. No needs to learn any other languages while it supports executing several embedded languages. Auditing every commands pipelines executed and recovering from interruption and error. Pipelines are written through combination of inner commands.
+* Cons: Compared to other workflows, it doesn't provide any gui interactions, visualization of workflows or results, sharable feature and container based dispatch feature. Also the small-scale parallel tasks are not fully distributed ones? 
 
      ------
 
@@ -414,5 +391,22 @@ Makeflow is a workflow system for executing large complex workflows on clusters,
 
 -------
 
+### [Airavata](http://airavata.apache.org/index.html)
+[github](https://github.com/apache/airavata)
+Apache Airavata, a software framework to executing and managing computational jobs on distributed computing resources including local clusters, supercomputers, national grids, academic and commercial clouds. Airavata builds on general concepts of service oriented computing, distributed messaging, and workflow composition and orchestration. Airavata bundles a server package with an API, client software development Kits and a general purpose reference UI implementation - Apache Airavata PHP reference gateway.   
 
+![Airavata](pics/AiravataArchitecture.png)
 
+- Syntax: Explicit
+- Paradigm: Configuration
+- Interaction: GUI
+- Distributed Computing Support:  Yes
+- Extensive: [API](https://cwiki.apache.org/confluence/display/AIRAVATA/Airavata+API+Overview)
+- Language: Java
+- License: Apache License 2.0
+- Pros: It is a project belongs to apache community, its goal is to develop a middle-ware sitting between users and computing resources. It has both desktop(client) and web interfaces and generates data using apache thrift-based API. It provides resources monitoring features and multiple languages user API. 
+- Cons: It is not a specific workflow designed for bioinformatics and may need to be modified to meet one's own requirements. Application factory needs connection with computational resources, which may need root privileges to install plugins/softwares. 
+
+------
+
+### 
