@@ -411,4 +411,33 @@ Pegasus has a number of features that contribute to its usability and effectiven
 * Cons: Unsupport container technology.  Only support XML rather than other pipeline description formats and one needs to use dax generator for each workflow to generate XML. 
 
 ------
+### [Bigdatascript](http://pcingola.github.io/BigDataScript/)
+[github](https://github.com/pcingola/BigDataScript)
+BigDataScript is intended as a scripting language for big data pipeline. 
+With BigDataScript, creating jobs for big data is as easy as creating a shell script and it runs seamlessly on any computer system, no matter how small or big it is. If you normally use specialized programs to perform heavyweight computations, then BigDataScript is the glue to those commands you need to create a reliable pipeline. 
+* Reduced development time. Spend less time debugging your work on big systems with a huge data volumes. Now you can debug the same jobs using a smaller sample on your computer. Get immediate feedback, debug, fix and deploy when it's done. Shorter development cycles means better software.
+* System independent. Cross-system, seamless execution, the same program runs on a laptop, server, server farm, cluster or cloud. No changes to the program required. Work once.
+* Easy to learn. The syntax is intuitive and it resembles the syntax of most commonly used programming languages. Reading the code is easy as pi.
+* Automatic Checkpointing. If any task fails to execute, BigDataScript creates a checkpoint file, serializing all the information from the program. Want to restart were it stopped? No problem, just resume the execution from the checkpoint.
+* Automatic logging. Everything is logged (-log command line option), no explicit actions required. Every time you execute a system command or a task, BigDataScript logs the executed commands, stdout & stderr and exit codes.
+* Clean stop with no mess behind. You have a BigDataScript running on a terminal and suddenly you realized there is something wrong... Just hit Ctrl-C. All scheduled tasks and running jobs will be terminated, removed from the queue, deallocated from the cluster. A clean stop allows you to focus on the problem at hand without having to worry about restoring a clean state.
+* Task dependencies. In complex pipelines, tasks usually depend on each other. BigDataScript provides ways to easily manage task dependencies.
+* Avoid re-work. Executing the pipeline over and over should not re-do jobs that were completed successfully and moreover are time consuming. Task dependency based on timestamps is a built-in functionality, thus making it easy to avoid starting from scratch every time.
+* Built in debugger. Debugging is an integral part of programming, so it is part of bds language. Statements breakpoint and debug make debugging part of the language, instead of requiring platform specific tools.
+* Built in test cases facility. Code testing is performed in everyday programming, so testing is built in bds.
+
+* Syntax: Implicit
+* Paradigm: Class
+* Interaction: CLI
+* Distributed Computing Support:  Yes, this language is born with running on cloud or cluster
+* Extensive: NA
+* Language: go?
+* License: Apache License 2.0
+* Pros: It is a completely created script language for developing pipelines with many built-in features.  
+* Cons: Integration on existing pipelines and tools is still needs to be done. One may need to spend time on developing codes to use other pipelines. No visualization support. 
+
+------
+### [Biomake](https://github.com/evoldoers/biomake)
+
+This is a make-like utility for managing builds (or analysis workflows) involving multiple dependent files. It supports most of the functionality of GNU Make, along with neat extensions like cluster-based job processing, multiple wildcards per target, MD5 checksums instead of timestamps, and declarative logic programming in Prolog.
 
