@@ -441,3 +441,99 @@ With BigDataScript, creating jobs for big data is as easy as creating a shell sc
 
 This is a make-like utility for managing builds (or analysis workflows) involving multiple dependent files. It supports most of the functionality of GNU Make, along with neat extensions like cluster-based job processing, multiple wildcards per target, MD5 checksums instead of timestamps, and declarative logic programming in Prolog.
 
+* Syntax: Implicit
+* Paradigm: Class
+* Interaction: CLI
+* Distributed Computing Support:  Yes, Biomake already adds extensions like cluster-based job processing.
+* Extensive: NA
+* Language: perl
+* License: BSD-3-Clause
+* Pros: Make-like style development, it also supports most of the [funcitonality](https://github.com/evoldoers/biomake#make-like-features) of GNU make, thougth they behave slight difference on processing variables.
+* Cons: No cloud-based computing framework. No container technology supports. No visualization. 
+
+------
+### [Loom](https://github.com/StanfordBioinformatics/loom)
+Loom is a platform-independent tool to create, execute, track, and share workflows.
+* Ease of use. Loom runs out-of-the-box locally or in the cloud.
+* Repeatable analysis. Loom makes sure you can repeat your analysis months and years down the road after you've lost your notebook, your data analyst has found a new job, and your server has had a major OS version upgrade.Loom uses Docker to reproduce your runtime environment, records file hashes to verify analysis inputs, and keeps fully reproducible records of your work.
+* Traceable results. Loom remembers anything you ever run and can tell you exactly how each result was produced.
+* Portability between platforms. Exactly the same workflow can be run on your laptop or on a public cloud service.
+* Open architecture. Not only is Loom open source and free to use, it uses an inside-out architecture that minimizes lock-in and lets you easily share your work with other people.
+* Graphical user interface. While you may want to automate your analysis from the command line, a graphical user interface is useful for interactively browsing workflows and results.
+* Security and compliance. Loom is designed with clinical compliance in mind.
+
+* Syntax: Explicit
+* Paradigm: Configuration
+* Interaction: CLI
+* Distributed Computing Support:  Yes, Google cloud server is supported by default.
+* Extensive: NA
+* Language: Python
+* License: GNU Affero General Public License v3.0
+* Pros: Easy configuration and development, configuration based on yaml allows users to develop rapidly.
+* Cons: Configuration may become complex when pipeline itself is complex, based on official examples, configuration becomes longer and difficult to read and write when one implements complex pipelines. Author could introduce hierarchical yaml supports.
+
+------
+### [Dagr](https://github.com/fulcrumgenomics/dagr)
+A task and pipeline execution system for directed acyclic graphs to support scientific, and more specifically, genomic analysis workflows.
+There are many toolkits available for creating and executing pipelines of dependent jobs; dagr does not aim to be all things to all people but to make certain types of pipelines easier and more pleasurable to write. It is specifically focused on:
+* Writing pipelines that are concise, legible, and type-safe
+* Easy composition of pipelines into bigger pipelines
+* Providing safe and coherent ways to dynamically change the graph during execution
+* Making the full power and expressiveness of scala available to pipeline authors
+* Efficiently executing tasks concurrently within the constraints of a single machine/instance
+  It is a tool for working data scientists, programmers and bioinformaticians.
+
+* Syntax: Implicit
+* Paradigm: Class
+* Interaction: CLI
+* Distributed Computing Support:  No?
+* Extensive: NA
+* Language: Scala
+* License: MIT License
+* Pros: It manages complex dependencies among tasks and piplines. It contains a small set of predefined genomic analysis taks and pipelines. Resource-aware scheduling across tasks and pipelines..
+* Cons: Currently in alpha version, still unstable. It may be not usable in product environment. 
+
+-------
+### [Butler](https://github.com/llevar/butler)
+Butler is a collection of tools whose goal is to aid researchers in carrying out scientific analyses on a multitude of cloud computing platforms (AWS, Openstack, Google Compute Platform, Azure, and others). Butler is based on many other Open Source projects such as - Apache Airflow, Terraform, Saltstack, Grafana, InfluxDB, PostgreSQL, Celery, Elasticsearch, Consul, and others.
+* Provisioning - Creation and teardown of clusters of Virtual Machines on various clouds.
+* Configuration Management - Installation and configuration of software on Virtual Machines.
+* Workflow Management - Definition and execution of distributed scientific workflows at scale.
+* Operations Management - A set of tools for maintaining operational control of the virtualized environment as it performs work.
+
+* Syntax: Explicit
+* Paradigm: Class
+* Interaction: CLI & [GUI](http://airflow.service.consul:8889/airflow/)
+* Distributed Computing Support:  Yes, AWS,openstack, Google Compute Platform, Azure and other are supported.
+* Extensive: NA
+* Language: Python
+* License: GNU General Public License v3.0
+* Pros: It is a bunch collections of powerful tools, it has supports of docker technology and CWL. It is also shpped with some ready-made workflows that could be used immediately. 
+* Cons: Installment steps are a little complex, as it consists of different softwares or middlewares. 
+
+------
+### [Fireworks](https://materialsproject.github.io/fireworks/)
+[github](https://github.com/materialsproject/fireworks)
+FireWorks is a free, open-source code for defining, managing, and executing workflows. Complex workflows can be defined using Python, JSON, or YAML, are stored using MongoDB, and can be monitored through a built-in web interface. Workflow execution can be automated over arbitrary computing resources, including those that have a queueing system. FireWorks has been used to run millions of workflows encompassing tens of millions of CPU-hours across diverse application areas and in long-term production projects over the span of multiple years.
+
+* A clean and flexible Python API, a powerful command-line interface, and a built-in web service for monitoring workflows.
+* A database backend (MongoDB) lets you add, remove, and search the status of workflows.
+* Detect failed jobs (both soft and hard failures), and rerun them as needed.
+* Multiple execution modes - directly on a multicore machines or through a queue, on a single machine or multiple machines. Assign priorities and where jobs run.
+* Support for dynamic workflows - workflows that modify themselves or create new ones based on what happens during execution.
+* Automatic duplicate handling at the sub-workflow level - skip duplicated portions between two workflows while still running unique sections
+* Built-in tasks for creating templated inputs, running scripts, and copying files to remote machines
+* Remotely track the status of output files during execution.
+* Package many small jobs into a single large job (e.g., automatically run 100 serial workflows in parallel over 100 cores)
+* Support for several queueing systems such as PBS/Torque, Sun Grid Engine, SLURM, and IBM LoadLeveler.
+
+
+* Syntax: Implicit
+* Paradigm: Configuration(YAML) & Class(Python classes)
+* Interaction: CLI 
+* Distributed Computing Support:  Partially, it supports several supercomputing centers such as [NERSC](https://materialsproject.github.io/fireworks/installation_notes.html), but seems doesn't support cloud platform such as AWS, Google computing platform or Azure.
+* Extensive: [Python API](https://materialsproject.github.io/fireworks/py-modindex.html)
+* Language: Python
+* License: BSD-style License
+* Pros: Pipelines development is based on either configuration(Yaml) or python API, which makes it quite easy to develop pipelines. It provides a feature of dynamical workflows. Built-in firetasks allow users to create pipelines rapidly.
+* Cons: No pipelines dependencies management. No container technology supports. No cloud framework supports. It depends on mongodb, users need to maintain mongodb themselves.
